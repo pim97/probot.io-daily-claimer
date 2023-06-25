@@ -16,7 +16,7 @@ This project allows you to daily claim your rewards from Probot.io
 ## Usage
 
 1. Replace the following details with your own details in the script file (`script.js`):
-   - SCRAPPEY_API_KEY: Your Scrappey API key
+   - SCRAPPEY_API_KEY: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
    - AUTHORIZATION_HEADER_KEY: Your authorization header key from probot.io
    - CAPSOLVER_API_KEY: Your CapSolver API key
    - PROXY: Your proxy information
