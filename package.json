@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node-capsolver": "^1.0.6",
+    "scrappey": "^1.2.3"
+  }
+}
