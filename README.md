@@ -6,6 +6,8 @@
 
 ProBot is a highly customizable multipurpose bot for Discord servers. It offers features like customizable welcome images, advanced auto-moderation, auto-responses, anti-raid protection, multilingual support, and more. With a 99.99% uptime, ProBot ensures a stable presence. It also provides a leveling system, moderation commands, and self-assignable roles. Join the 8.8 million servers using ProBot and enhance your Discord server experience.
 
+This project allows you to daily claim your rewards from Probot.io
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/pim97/probot.io-daily-claimer.git`
