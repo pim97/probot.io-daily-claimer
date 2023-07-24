@@ -68,7 +68,7 @@ async function run() {
         const sessionRequest = await scrappey.createSession({
             proxy: PROXY
         });
-        session = sessionRequest.session;
+        const session = sessionRequest.session;
 
         console.log('Created Session:', session);
 
