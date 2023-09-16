@@ -34,3 +34,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Author: Pim97
 - GitHub: [Your GitHub Profile](https://github.com/pim97/)
+
+## Legal and Ethical Considerations
+
+Remember to adhere to legal and ethical guidelines when scraping websites. Always respect the website's terms of service and scraping policies. Ensure your use of the scraped data complies with applicable laws and regulations, especially regarding data privacy and intellectual property rights. 🚫⚖️
+
+*Disclaimer: This web scraping guide is intended solely for educational and informational purposes. Please use web scraping responsibly and in accordance with the terms and conditions of the target website.* 📚🔍
