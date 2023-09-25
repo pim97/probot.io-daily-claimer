@@ -96,7 +96,7 @@ async function run() {
             url: 'https://probot.io/api/claim_daily',
             session: session,
             customHeaders: {
-                'content-type': 'application/json',
+                "content-type": "application/json",
                 "authorization": AUTHORIZATION_HEADER_KEY,
                 "referer": "https://probot.io/daily",
                 "origin": "https://probot.io",
