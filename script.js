@@ -97,8 +97,11 @@ async function run() {
             session: session,
             customHeaders: {
                 'content-type': 'application/json',
-                "authorization": AUTHORIZATION_HEADER_KEY
+                "authorization": AUTHORIZATION_HEADER_KEY,
+                "referer": "https://probot.io/daily",
+                "origin": "https://probot.io",
             },
+            requestType: "request",
             postData: JSON.stringify(post),
         })
 
