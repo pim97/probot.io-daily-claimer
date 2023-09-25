@@ -1,4 +1,4 @@
-const Scrappey = require('scrappey');
+const Scrappey = require('scrappey-wrapper');
 const crypto = require('crypto');
 const CapSolver = require('node-capsolver')
 
@@ -72,7 +72,7 @@ async function run() {
 
         console.log('Created Session:', session);
 
-        const get = await scrappey.getRequest({
+        const get = await scrappey.get({
             url: 'https://probot.io/api/user',
             session: session,
             customHeaders: {
@@ -92,7 +92,7 @@ async function run() {
             d: date,
         }
 
-        const claim = await scrappey.postRequest({
+        const claim = await scrappey.post({
             url: 'https://probot.io/api/claim_daily',
             session: session,
             customHeaders: {
