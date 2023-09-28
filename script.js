@@ -7,6 +7,7 @@ const AUTHORIZATION_HEADER_KEY = 'probot_auth_header'
 // Create an instance of Scrappey
 const scrappey = new Scrappey(SCRAPPEY_API_KEY);
 
+// Optional to add proxy, one is added if not added
 const PROXY = ''
 
 /**
@@ -39,9 +40,9 @@ async function run() {
                 "authorization": AUTHORIZATION_HEADER_KEY
             },
             probotData: {
-                id: result.id,
+                id: result.id, //send us your ID from /api/user
             },
-            postData: "probot",
+            postData: "probot", //keep this
         })
 
         console.log(claim)
