@@ -1,55 +1,51 @@
 const Scrappey = require('scrappey-wrapper');
 
 // Replace the following details with your own details
-const SCRAPPEY_API_KEY = 'scrappey.com';
-const AUTHORIZATION_HEADER_KEY = 'probot_auth_header'
+const SCRAPPEY_API_KEY = 'scrappey_key_from_scrappey.com';
+
+// Replace the authorization header found from probot.io
+const AUTHORIZATION_HEADER_KEY_PROBOT_IO = 'auth_key'
 
 // Create an instance of Scrappey
 const scrappey = new Scrappey(SCRAPPEY_API_KEY);
 
 // Optional to add proxy, one is added if not added
-const PROXY = ''
+const PROXY = 'http://user:pass@host:port'
 
-/**
- * Runs the script
- */
 async function run() {
     try {
-        const sessionRequest = await scrappey.createSession({
-            // proxy: PROXY //optional
-        });
-        const session = sessionRequest.session;
 
-        console.log('Created Session:', session);
-
-        const get = await scrappey.get({
-            url: 'https://probot.io/api/user',
-            session: session,
-            customHeaders: {
-                "authorization": AUTHORIZATION_HEADER_KEY
+        /**
+         * Send the authorization key to Scrappey and scrappey does the rest.
+         * 
+         * Scrappey solve's the Cloudflare and Turnstile automatically for you by using the
+         * Scrappey's Task system
+         * 
+         * ** Disclaimer **
+         * 
+         * Be aware that you are sending your key to login to Scrappey for Probot.io.
+         * We recommend to only send credentials that you are okay to lose.
+         * Scrappey does not store your key, it is only used to claim the rewards.
+         */
+        const claim = await scrappey.get({
+            "url": "https://probot.io",
+            "proxy": PROXY, //optional, can be left out
+            "task": "probot",
+            "taskData": {
+                "authorization_key": AUTHORIZATION_HEADER_KEY_PROBOT_IO
             }
         })
 
-        const result = JSON.parse(get.solution.innerText)
+        if (claim && claim.solution && claim.solution.innerText) {
 
-        const claim = await scrappey.post({
-            url: 'https://probot.io/api/claim_daily',
-            session: session,
-            customHeaders: {
-                "content-type": "application/json",
-                "authorization": AUTHORIZATION_HEADER_KEY
-            },
-            probotData: {
-                id: result.id, //send us your ID from /api/user
-            },
-            postData: "probot", //keep this
-        })
+            //Success!
+            console.log(claim.solution.innerText)
+        } else {
 
-        console.log(claim)
+            //Something went wrong
+            console.log(claim)
+        }
 
-        // Manually destroy the session (automatically destroys after 4 minutes)
-        await scrappey.destroySession(session);
-        console.log('Session destroyed.');
     } catch (error) {
         console.error(error);
     }
