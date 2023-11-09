@@ -9,7 +9,7 @@ const CAPSOLVER_API_KEY = 'capsolver.com'
 const PROXY = 'your_proxy_here'
 
 //Do not change
-const PROBOT_V2_KEY = '6LceDTMUAAAAAFQhYmUzmvKn6uahUjgguWpg-KO1'
+const PROBOT_V2_KEY = '6LfpR_8oAAAAAOQ2gwAxTc3T3070zsuKl2D_ABJQ'
 
 // Create an instance of Scrappey
 const scrappey = new Scrappey(SCRAPPEY_API_KEY);
