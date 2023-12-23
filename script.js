@@ -9,7 +9,7 @@ const CAPSOLVER_API_KEY = 'capsolver.com'
 const PROXY = 'your_proxy_here'
 
 //Do not change
-const PROBOT_V2_KEY = '6LfpR_8oAAAAAOQ2gwAxTc3T3070zsuKl2D_ABJQ'
+const PROBOT_V2_KEY = '9e30723b-72c6-4928-96a1-9d26ae5ed6bd'
 
 // Create an instance of Scrappey
 const scrappey = new Scrappey(SCRAPPEY_API_KEY);
@@ -40,7 +40,7 @@ function hash(id) {
 async function getCaptchaAnswer() {
     const taskData =
     {
-        type: "ReCaptchaV2TaskProxyLess",
+        type: "HCaptchaTaskProxyLess",
         websiteURL: "https://probot.io/api/claim_daily",
         websiteKey: PROBOT_V2_KEY
     }
